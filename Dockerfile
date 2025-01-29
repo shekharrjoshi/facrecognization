@@ -26,6 +26,9 @@ COPY . .
 # Replace 8000 with the actual port if needed
 EXPOSE 5000
 
+RUN useradd -u 8877 shekhar
+# Change to non-root privilege
+USER shekhar
 # Command to run the Python script
 # Replace 'main.py' with the name of your script
 CMD ["python", "app.py"]
