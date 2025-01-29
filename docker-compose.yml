@@ -1,0 +1,15 @@
+version: "python:3.10"
+
+services:
+  imagematch:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: imagematch
+    ports:
+      - "5000:5000" 
+    volumes:
+      - .:/app 
+    environment:
+      - ENV_VAR_NAME=example_value 
+    command: ["python", "app.py"]  
